@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Scraper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' 'unsafe-inline'">
+</head>
+<body style="background: white;">
+    <h3 style="text-align: center;">Scraping Data</h3>
+    <hr/>
+    <div style="text-align: center;">
+        <button class="btn btn primary" style="background-color: indigo;color: white;" id='btnrun' onclick="getData()">
+            Run Scrapeer
+        </button>
+    </div>
+    <script>
+        async function getData() {
+           await require('./scraper.js')
+        }
+        document.querySelector('#btnrun').addEventListener('click',async () => {
+            await getData()
+        })
+    </script>
+</body>
+</html>
